@@ -8,7 +8,7 @@ OMSENC=texmsym.enc
 %.tfm : %.afm
 	$(AFM2TFM) $<
 
-U%.afm : %.ttf 
+U%.afm : %.ttf $(UENC)
 	$(TTF2AFM) -e $(UENC) $< -o $@
 T1%.afm : %.ttf 
 	$(TTF2AFM) -e $(T1ENC) $< -o $@
@@ -20,8 +20,8 @@ OMS%.afm : %.ttf
 FILES=$(addsuffix .tfm,DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold)
 
 LATEX=pdflatex
-LaTeXDocument(test, test)
 USEPDFLATEX = true
+LaTeXDocument(test, test)
 
 .DEFAULT: $(addprefix U,$(FILES)) \
           $(addprefix T1,$(FILES)) \
