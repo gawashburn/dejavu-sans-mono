@@ -1,0 +1,33 @@
+TTF2AFM=ttf2afm
+AFM2TFM=afm2tfm
+UENC=dvsm.enc
+T1ENC=cork.enc
+OT1ENC=8r.enc
+OMSENC=texmsym.enc
+
+%.tfm : %.afm
+	$(AFM2TFM) $<
+
+U%.afm : %.ttf 
+	$(TTF2AFM) -e $(UENC) $< -o $@
+T1%.afm : %.ttf 
+	$(TTF2AFM) -e $(T1ENC) $< -o $@
+OT1%.afm : %.ttf 
+	$(TTF2AFM) -e $(OT1ENC) $< -o $@
+OMS%.afm : %.ttf 
+	$(TTF2AFM) -e $(OT1ENC) $< -o $@
+
+FILES=$(addsuffix .tfm,DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold)
+
+LATEX=pdflatex
+LaTeXDocument(test, test)
+USEPDFLATEX = true
+
+.DEFAULT: $(addprefix U,$(FILES)) \
+          $(addprefix T1,$(FILES)) \
+          $(addprefix OT1,$(FILES)) \
+          $(addprefix OMS,$(FILES)) \
+          test.pdf
+
+clean:
+	$(RM) *.afm *.tfm *.aux *.log *.pdf *.fls

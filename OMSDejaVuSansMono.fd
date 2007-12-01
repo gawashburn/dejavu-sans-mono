@@ -1,0 +1,3 @@
+\DeclareFontFamily{OMS}{DejaVuSansMono}{}
+\DeclareFontShape{OMS}{DejaVuSansMono}{m}{n}{ <-> [0.8] OMSDejaVuSansMono}{}
+\DeclareFontShape{OMS}{DejaVuSansMono}{b}{n}{ <-> [0.8] OMSDejaVuSansMono-Bold}{}

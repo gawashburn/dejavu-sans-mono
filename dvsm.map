@@ -1,13 +1,11 @@
-UDejaVuSansMono       <informl.enc <DejaVuSansMono.ttf
-UDejaVuSansMonoBold   <informl.enc <DejaVuSansMono-Bold.ttf
-UDejaVuSans           <informl.enc <DejaVuSans.ttf
-UDejaVuSansBold       <informl.enc <DejaVuSans-Bold.ttf
+UDejaVuSansMono       <dvsm.enc <DejaVuSansMono.ttf
+UDejaVuSansMono-Bold   <dvsm.enc <DejaVuSansMono-Bold.ttf
+UDejaVuSans           <dvsm.enc <DejaVuSans.ttf
+UDejaVuSans-Bold       <dvsm.enc <DejaVuSans-Bold.ttf
 
-OT1DejaMono      <8r.enc <DejaVuSansMono.ttf
-OT1DejaMonoBold  <8r.enc <DejaVuSansMono-Bold.ttf
-OMSDejaMono      <texmsym.enc <DejaVuSansMono.ttf
-OMSDejaMonoBold  <texmsym.enc <DejaVuSansMono-Bold.ttf
-
-T1DejaMono       <cork.enc <DejaVuSansMono.ttf
-T1DejaMonoBold   <cork.enc <DejaVuSansMono-Bold.ttf
-
+OT1DejaVuSansMono      <8r.enc <DejaVuSansMono.ttf
+OT1DejaVuSansMono-Bold  <8r.enc <DejaVuSansMono-Bold.ttf
+OMSDejaVuSansMono      <texmsym.enc <DejaVuSansMono.ttf
+OMSDejaVuSansMono-Bold  <texmsym.enc <DejaVuSansMono-Bold.ttf
+T1DejaVuSansMono       <cork.enc <DejaVuSansMono.ttf
+T1DejaVuSansMono-Bold   <cork.enc <DejaVuSansMono-Bold.ttf
