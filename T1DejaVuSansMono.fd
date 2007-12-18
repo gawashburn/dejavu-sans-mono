@@ -1,3 +1,5 @@
 \DeclareFontFamily{T1}{DejaVuSansMono}{}
 \DeclareFontShape{T1}{DejaVuSansMono}{m}{n}{ <-> s*[0.8] T1DejaVuSansMono}{}
-\DeclareFontShape{T1}{DejaVuSansMono}{b}{n}{ <-> s*[0.8] T1DejaVuSansMono-Bold}{}
+\DeclareFontShape{T1}{DejaVuSansMono}{bx}{n}{ <-> s*[0.8] T1DejaVuSansMono-Bold}{}
+\DeclareFontShape{T1}{DejaVuSansMono}{m}{sl}{ <-> s*[0.8] T1DejaVuSansMono-Oblique}{}
+\DeclareFontShape{T1}{DejaVuSansMono}{bx}{sl}{ <-> s*[0.8] T1DejaVuSansMono-BoldOblique}{}

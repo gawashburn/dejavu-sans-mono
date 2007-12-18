@@ -3,16 +3,20 @@
 \RequirePackage[utf8]{inputenc}
 \pdfmapfile {+dvsm.map}
 
-\DeclareFontFamily{U}{DejaVuSans}{}
-\DeclareFontShape{U}{DejaVuSans}{m}{n}{ <-> s*[0.8] UDejaVuSans }{ } 
-\DeclareFontShape{U}{DejaVuSans}{b}{n}{ <-> s*[0.8] UDejaVuSans-Bold }{ } 
-\DeclareFontFamily{U}{DejaVuSansMono}{}
-\DeclareFontShape{U}{DejaVuSansMono}{m}{n}{ <-> s*[0.8] UDejaVuSansMono }{ } 
-\DeclareFontShape{U}{DejaVuSansMono}{b}{n}{ <-> s*[0.8] UDejaVuSansMono-Bold }{ } 
+\DeclareFontFamily{U}{DejaVuSansAlt}{}
+\DeclareFontShape{U}{DejaVuSansAlt}{m}{n}{ <-> s*[0.8] UDejaVuSans }{ } 
+\DeclareFontShape{U}{DejaVuSansAlt}{bx}{n}{ <-> s*[0.8] UDejaVuSans-Bold }{ } 
+\DeclareFontShape{U}{DejaVuSansAlt}{m}{sl}{ <-> s*[0.8] UDejaVuSans-Oblique }{ } 
+\DeclareFontShape{U}{DejaVuSansAlt}{bx}{sl}{ <-> s*[0.8] UDejaVuSans-BoldOblique }{ } 
+\DeclareFontFamily{U}{DejaVuSansMonoAlt}{}
+\DeclareFontShape{U}{DejaVuSansMonoAlt}{m}{n}{ <-> s*[0.8] UDejaVuSansMono }{ } 
+\DeclareFontShape{U}{DejaVuSansMonoAlt}{bx}{n}{ <-> s*[0.8] UDejaVuSansMono-Bold }{ } 
+\DeclareFontShape{U}{DejaVuSansMonoAlt}{m}{sl}{ <-> s*[0.8] UDejaVuSansMono-Oblique }{ } 
+\DeclareFontShape{U}{DejaVuSansMonoAlt}{bx}{sl}{ <-> s*[0.8] UDejaVuSansMono-BoldOblique }{ } 
 \renewcommand{\ttdefault}{DejaVuSansMono}
 
-\newcommand{\dvsm}[1]{{\fontencoding{U}\fontfamily{DejaVuSansMono}\selectfont{}#1}}
-\newcommand{\dvs}[1]{{\fontencoding{U}\fontfamily{DejaVuSans}\selectfont{}#1}}
+\newcommand{\dvsm}[1]{{\fontencoding{U}\fontfamily{DejaVuSansMonoAlt}\selectfont{}#1}}
+\newcommand{\dvs}[1]{{\fontencoding{U}\fontfamily{DejaVuSansAlt}\selectfont{}#1}}
 
 \newcommand{\text@alpha}{{\dvsm{\char"E0}}}
 \newcommand{\text@betta}{{\dvsm{\char"E1}}}

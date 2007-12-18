@@ -18,9 +18,12 @@ afmconfig(T1, $(T1ENC))
 afmconfig(OT1, $(OT1ENC))
 afmconfig(OMS, $(OMSENC))
 
-FILES=DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold
-TTF=$(addsuffix .ttf, $(FILES))
-TFM=$(addsuffix .tfm, $(FILES))
+BASE[]=DejaVuSans DejaVuSansMono
+
+FILES[]=$(BASE) $(addsuffix -Bold, $(BASE)) $(addsuffix -Oblique, $(BASE)) $(addsuffix -BoldOblique, $(BASE))
+
+TTF[]=$(addsuffix .ttf, $(FILES))
+TFM[]=$(addsuffix .tfm, $(FILES))
 
 LATEX=pdflatex
 USEPDFLATEX = true
