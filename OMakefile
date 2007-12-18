@@ -18,14 +18,15 @@ afmconfig(T1, $(T1ENC))
 afmconfig(OT1, $(OT1ENC))
 afmconfig(OMS, $(OMSENC))
 
-FILES=$(addsuffix .tfm, DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold)
-
+FILES=DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold
+TTF=$(addsuffix .ttf, $(FILES))
+TFM=$(addsuffix .tfm, $(FILES))
 
 LATEX=pdflatex
 USEPDFLATEX = true
 LaTeXDocument(test, test)
 
-.DEFAULT: $(addprefix U, $(FILES)) $(addprefix T1, $(FILES)) $(addprefix OT1, $(FILES)) $(addprefix OMS, $(FILES)) 
+.DEFAULT: $(addprefix U, $(TFM)) $(addprefix T1, $(TFM)) $(addprefix OT1, $(TFM)) $(addprefix OMS, $(TFM)) 
 
 .PHONY: test clean
 
