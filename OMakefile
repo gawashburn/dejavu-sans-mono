@@ -8,26 +8,28 @@ OMSENC=texmsym.enc
 %.tfm : %.afm
 	$(AFM2TFM) $<
 
-U%.afm : %.ttf $(UENC)
-	$(TTF2AFM) -e $(UENC) $< -o $@
-T1%.afm : %.ttf 
-	$(TTF2AFM) -e $(T1ENC) $< -o $@
-OT1%.afm : %.ttf 
-	$(TTF2AFM) -e $(OT1ENC) $< -o $@
-OMS%.afm : %.ttf 
-	$(TTF2AFM) -e $(OT1ENC) $< -o $@
+afmconfig(pref,enc) =
+  $(pref)%.afm : %.ttf $(shell kpsewhich $(enc))
+    $(TTF2AFM) -e $(enc) $< -o $@
+  export
 
-FILES=$(addsuffix .tfm,DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold)
+afmconfig(U, $(UENC))
+afmconfig(T1, $(T1ENC))
+afmconfig(OT1, $(OT1ENC))
+afmconfig(OMS, $(OMSENC))
+
+FILES=$(addsuffix .tfm, DejaVuSans DejaVuSans-Bold DejaVuSansMono DejaVuSansMono-Bold)
+
 
 LATEX=pdflatex
 USEPDFLATEX = true
 LaTeXDocument(test, test)
 
-.DEFAULT: $(addprefix U,$(FILES)) \
-          $(addprefix T1,$(FILES)) \
-          $(addprefix OT1,$(FILES)) \
-          $(addprefix OMS,$(FILES)) \
-          test.pdf
+.DEFAULT: $(addprefix U, $(FILES)) $(addprefix T1, $(FILES)) $(addprefix OT1, $(FILES)) $(addprefix OMS, $(FILES)) 
+
+.PHONY: test clean
+
+test: test.pdf
 
 clean:
 	$(RM) *.afm *.tfm *.aux *.log *.pdf *.fls
