@@ -5,18 +5,19 @@ T1ENC=cork.enc
 OT1ENC=8r.enc
 OMSENC=texmsym.enc
 
+
 %.tfm : %.afm
-	$(AFM2TFM) $<
+  $(AFM2TFM) $<
 
-afmconfig(pref,enc) =
-  $(pref)%.afm : %.ttf $(shell kpsewhich $(enc))
-    $(TTF2AFM) -e $(enc) $< -o $@
-  export
+U%.afm : %.ttf $(shell kpsewhich $(UENC))
+  $(TTF2AFM) -e $(UENC) -o $@ $<
+T1%.afm : %.ttf $(shell kpsewhich $(T1ENC))
+  $(TTF2AFM) -e $(T1ENC) -o $@ $<
+OT1%.afm : %.ttf $(shell kpsewhich $(OT1ENC))
+  $(TTF2AFM) -e $(OT1ENC) -o $@ $<
+OMS%.afm : %.ttf $(shell kpsewhich $(OMSENC))
+  $(TTF2AFM) -e $(OMSENC) -o $@ $<
 
-afmconfig(U, $(UENC))
-afmconfig(T1, $(T1ENC))
-afmconfig(OT1, $(OT1ENC))
-afmconfig(OMS, $(OMSENC))
 
 BASE[]=DejaVuSans DejaVuSansMono
 
@@ -36,4 +37,4 @@ LaTeXDocument(test, test)
 test: test.pdf
 
 clean:
-	$(RM) *.afm *.tfm *.aux *.log *.pdf *.fls
+	$(RM) *.afm *~ *.tfm *.aux *.log *.pdf *.fls
